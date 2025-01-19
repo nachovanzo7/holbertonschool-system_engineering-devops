@@ -1,0 +1,36 @@
+https://drive.google.com/file/d/12PL6B3qqkEOnFn6a-a00JjFsCBa_F0bY/view?usp=sharing
+
+Components Explained
+1. Load Balancer (HAProxy)
+Why Add This?
+The load balancer ensures even traffic distribution across the application servers, improving performance, scalability, and redundancy.
+
+Load Balancer Algorithm:
+
+Round Robin: Distributes requests sequentially across servers, ensuring equal load.
+Alternatively, Least Connections could be used to direct traffic to the server with the fewest active connections.
+Active-Active vs. Active-Passive Configuration:
+
+Active-Active: All servers handle traffic simultaneously, maximizing resource usage and performance.
+Active-Passive: One server handles traffic while the other stays idle as a backup, improving reliability but reducing resource efficiency.
+In this design, the load balancer uses an Active-Active configuration for both application servers.
+2. Web Server (Nginx)
+Why Add This?
+Nginx handles static files (images, CSS, JavaScript) and forwards dynamic requests to the application logic. It also improves performance through caching.
+
+3. Application Server
+Why Add This?
+Each server processes the application logic, interacts with the database, and generates responses for users.
+
+4. Database Cluster (MySQL)
+Why Add This?
+The primary-replica setup ensures data redundancy and high availability.
+
+How Does a Primary-Replica Cluster Work?
+
+The primary (master) database handles all write operations (INSERT, UPDATE, DELETE).
+The replica (slave) database receives updates asynchronously or semi-synchronously from the primary and handles read-only queries.
+Difference Between Primary and Replica Nodes for the Application:
+
+The application directs write queries to the primary database.
+The application directs read queries to the replica database, reducing the load on the primary.

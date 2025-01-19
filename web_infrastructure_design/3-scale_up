@@ -1,0 +1,24 @@
+https://drive.google.com/file/d/1NJI3g_DfXh52Xur_SorPTC5y75emaZF5/view?usp=sharing
+
+Components Explained
+1. Additional Server (Load Balancer Cluster)
+Why Add This?
+
+Ensures high availability and fault tolerance.
+If the primary load balancer fails, the secondary load balancer automatically takes over.
+2. Split Components
+Why Split Web Server, Application Server, and Database?
+
+Improved Performance: Each server specializes in its task, reducing bottlenecks.
+Scalability: Easier to scale individual components independently (e.g., add more web servers for increased traffic).
+Security: Database servers are isolated, reducing exposure to attacks.
+Load Balancer Role
+Distributes traffic among web servers using algorithms like Round Robin or Least Connections.
+Enhances the system’s performance and ensures even distribution of requests.
+Web Server Role
+Manages static assets (e.g., images, CSS, JS).
+Acts as a reverse proxy for requests to the application server.
+Application Server Role
+Processes dynamic requests, such as user authentication or database queries.
+Database Server Role
+Stores persistent data like user accounts, content, or transactions.

@@ -1,0 +1,10 @@
+https://drive.google.com/file/d/1MacTkdGSslZkynzZiT5tE3dUbvBx2bKK/view?usp=sharing
+
+Components Explained
+1. Firewalls
+Why Add This?
+Firewalls filter traffic, blocking unauthorized access to the servers.
+
+Firewall 1: Protects the load balancer from malicious requests.
+Firewall 2: Secures the application servers from direct user access.
+Firewall 3: Protects the database from external access, allowing only requests from application servers.
